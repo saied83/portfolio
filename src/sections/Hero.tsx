@@ -162,17 +162,11 @@ export const HeroSection = () => {
             Building Exceptional User Experiences
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-4 md:text-lg  text-center text-white/60"
-          >
+          <p className="mt-4 md:text-lg  text-center text-white/60">
             Passionate and Self-driven Full Stack Web Developer specializing in
             turning design concepts into dynamic, user-friendly web
             applications. Explore my projects and technical skills.
-          </motion.p>
+          </p>
         </div>
         <div className="flex md:flex-row justify-center flex-col items-center mt-4 md:mt-8 gap-4">
           <button
