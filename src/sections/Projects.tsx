@@ -12,7 +12,7 @@ const portfolioProjects = [
     title: "Fashion fizz",
     results: [
       { title: "A modern e-commerce clothing website." },
-      { title: "User authentication and authorization using Context API." },
+      { title: "User authentication  using Context API." },
       { title: "Client-side routing using React Router." },
     ],
     link: "https://fashion-fizz.vercel.app",
@@ -21,7 +21,7 @@ const portfolioProjects = [
   {
     title: "Chat App",
     results: [
-      { title: "A real-time messaging web app built with the MERN Stack." },
+      { title: "Real-time messaging web app." },
       { title: "Expanded customer reach by 35%." },
       { title: "Increased brand awareness by 15%." },
     ],
@@ -44,8 +44,8 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
-      <div className="container ">
+    <section className="pb-16 mx-12 lg:py-24">
+      <div className="container-sm mx-auto">
         <SectionHeader
           title="Featured Projects"
           eyebrow="Real-world Results"
@@ -65,8 +65,8 @@ export const ProjectsSection = () => {
                     backgroundImage: `url(${grainImage.src})`,
                   }}
                 ></div>
-                <div className="lg:grid lg:grid-cols-2 lg:gap-16">
-                  <div className="lg:pb-16">
+                <div className="flex flex-col-reverse gap-10 lg:grid lg:grid-cols-2 lg:gap-16">
+                  <div className="lg:pb-16 pb-8">
                     <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold gap-2 uppercase tracking-widest text-sm text-transparent bg-clip-text">
                       <h3 className="font-serif text-2xl md:text-4xl md:mb-2  ">
                         {project.title}
@@ -94,7 +94,7 @@ export const ProjectsSection = () => {
                   </div>
                   <div>
                     <Image
-                      className="rounded-2xl mt-8 -mb-4 aspect-auto md:-mb-0 lg:mt-0
+                      className="rounded-lg -my-4 aspect-auto md:-mb-0 lg:mt-0
                       lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                       src={project.image}
                       alt={project.title}

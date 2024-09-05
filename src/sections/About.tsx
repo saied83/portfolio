@@ -8,6 +8,7 @@ import React from "@/assets/icons/react.svg";
 import Github from "@/assets/icons/github.svg";
 import { CardHeader } from "@/components/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems";
+import grainImage from "@/assets/images/grain.jpg";
 
 const toolBoxItems = [
   {
@@ -34,61 +35,73 @@ const toolBoxItems = [
 
 const hobbies = [
   {
-    hobby: "Programming",
-    emoji: "💻",
+    hobby: "Relaxing",
+    emoji: "🧘‍♀️",
+    top: "5%",
+    left: "5%",
   },
   {
     hobby: "Gardening",
     emoji: "🪴",
+    left: "50%",
+    top: "5%",
   },
   {
     hobby: "Volunteering",
     emoji: "🤝",
+    left: "10%",
+    top: "35%",
   },
   {
     hobby: "Learning",
     emoji: "🧠",
+    left: "35%",
+    top: "40%",
   },
   {
     hobby: "Exploring",
     emoji: "🗺️",
+    left: "70%",
+    top: "45%",
   },
   {
     hobby: "Cooking",
     emoji: "🧑‍🍳",
+    left: "5%",
+    top: "65%",
   },
   {
     hobby: "Hiking",
     emoji: "🥾",
-  },
-  {
-    hobby: "Creating",
-    emoji: "💡",
-  },
-  {
-    hobby: "Relaxing",
-    emoji: "🧘‍♀️",
+    left: "45%",
+    top: "70%",
   },
 ];
 
 export const AboutSection = () => {
   return (
-    <div className="py-16">
+    <div className="py-16 ">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me"
         />
-        <div className="mt-16">
-          <Card className="mb-10">
+        <div className="mt-16 flex flex-col gap-6">
+          <Card className="p-6 lg:p-12 lg:pr-10 lg:text-justify bg-gradient-to-r from-emerald-500 to-sky-400 text-gray-900 overflow-hidden">
+            <div
+              className="absolute inset-0 opacity-5 -z-10"
+              style={{
+                backgroundImage: `url(${grainImage})`,
+              }}
+            ></div>
             <div>
               <div className="inline-flex gap-2  items-center">
-                <StarIcon className="size-9 text-emerald-300" />
+                <StarIcon className="size-9 text-white" />
                 <h3 className="font-serif text-3xl f">My Instance</h3>
               </div>
-              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
-                <p className="text-semibold text-white/90">
+              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-gray-800 mt-4 md:text-lg  mx-auto lg:text-xl">
+                <p className="text-semibold text-black">
                   {" "}
                   I&apos;m a passionate and dedicated full-stack web developer
                   with a strong foundation in both frontend and backend
@@ -103,24 +116,28 @@ export const AboutSection = () => {
                   and Database Management.
                 </p>
 
-                <span className="text-bold text-lg text-white mt-4">
+                <span className="text-extrabold text-2xl font-serif text-black mt-4">
                   My technical proficiency includes:
                 </span>
 
                 <p className="-mt-2">
-                  <span className="text-white text-semibold">Frontend:</span>{" "}
+                  <span className="text-black text-xl  text-semibold">
+                    Frontend:
+                  </span>{" "}
                   JavaScript, HTML, CSS, Tailwind CSS, React, React Router Dom,
                   Authorization, Authentication, Data Fetching, State Management
                   (Context API), Framer Motion, Next.js, TypeScript,
                 </p>
 
                 <p>
-                  <span className="text-white text-semibold">Backend:</span>{" "}
+                  <span className="text-black text-xl text-semibold">
+                    Backend:
+                  </span>{" "}
                   Node.js, Express.js, MySQL, MongoDB, Mongoose
                 </p>
 
                 <p>
-                  <span className="text-white text-semibold">
+                  <span className="text-black text-semibold">
                     I&apos;m committed to continuous learning and growth.
                   </span>{" "}
                   To sharpen my problem-solving abilities, I&apos;ve tackled
@@ -128,7 +145,7 @@ export const AboutSection = () => {
                   participating in coding contests on Codeforces.
                 </p>
                 <p>
-                  <span className="text-white text-semibold">
+                  <span className="text-black text-semibold">
                     I&apos;m eager to apply my skills to real-world projects and
                     collaborate with talented teams.
                   </span>{" "}
@@ -139,30 +156,46 @@ export const AboutSection = () => {
               </div>
             </div>
           </Card>
-          <Card className="mb-10 h-[320px] p-0">
-            <CardHeader
-              title="My ToolBox"
-              description="Explore the technologies and tools I use to craft exceptional
+          <div className="md:grid md:grid-cols-2 flex flex-col gap-6 ">
+            <Card className=" h-[320px] p-0 ">
+              <CardHeader
+                title="My ToolBox"
+                description="Explore the technologies and tools I use to craft exceptional
                 digital experiences."
-              className="px-6 pt-6"
-            />
-            <ToolBoxItems toolboxItems={toolBoxItems} />
-            <ToolBoxItems toolboxItems={toolBoxItems} />
-          </Card>
-          <Card className="mb-10">
-            <CardHeader
-              title="Beyond the Code"
-              description="Explore my interest and hobbies beyond the digital realm"
-            />
-            <div>
-              {hobbies.map((hobby) => (
-                <div key={hobby.hobby}>
-                  <span>{hobby.hobby}</span>
-                  <span>{hobby.emoji}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
+                className="px-6 pt-6"
+              />
+              <ToolBoxItems toolboxItems={toolBoxItems} className="" />
+              <ToolBoxItems
+                toolboxItems={toolBoxItems}
+                className="mt-6 "
+                itemsWrapperClassName="-translate-x-1/2"
+              />
+            </Card>
+            <Card className="h-[320px] p-0 flex flex-col">
+              <CardHeader
+                title="Beyond the Code"
+                description="Explore my interest and hobbies beyond the digital realm"
+                className="px-6 py-6"
+              />
+              <div className="relative flex-1">
+                {hobbies.map((hobby) => (
+                  <div
+                    key={hobby.hobby}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r rounded-full py-1.5 from-emerald-300 to-sky-400 absolute"
+                    style={{
+                      left: hobby.left,
+                      top: hobby.top,
+                    }}
+                  >
+                    <span className="font-medium text-gray-950">
+                      {hobby.hobby}
+                    </span>
+                    <span>{hobby.emoji}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
