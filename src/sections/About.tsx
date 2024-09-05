@@ -139,24 +139,6 @@ export const AboutSection = () => {
                   </span>{" "}
                   Node.js, Express.js, MySQL, MongoDB, Mongoose
                 </p>
-
-                <p>
-                  <span className="text-white text-semibold">
-                    I&apos;m committed to continuous learning and growth.
-                  </span>{" "}
-                  To sharpen my problem-solving abilities, I&apos;ve tackled
-                  over 60 coding challenges on LeetCode and am actively
-                  participating in coding contests on Codeforces.
-                </p>
-                <p>
-                  <span className="text-white text-semibold">
-                    I&apos;m eager to apply my skills to real-world projects and
-                    collaborate with talented teams.
-                  </span>{" "}
-                  If you&apos;re seeking a dedicated and versatile web
-                  developer, I&apos;m ready to contribute my expertise to your
-                  projects.
-                </p>
               </div>
             </div>
           </Card>

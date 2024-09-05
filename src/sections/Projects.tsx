@@ -1,12 +1,28 @@
-import darkSaasLandingPage from "@/assets/images/fashion-fizz.png";
-import lightSaasLandingPage from "@/assets/images/chat-web-app.png";
-import aiStartupLandingPage from "@/assets/images/instafood.png";
+import fashionFizz from "@/assets/images/fashion-fizz.png";
+import ChatWebApp from "@/assets/images/chat-web-app.png";
+import InstaFood from "@/assets/images/instafood.png";
+import FindYourDreamJob from "@/assets/images/find-your-dream-job.png";
+import RecipeFinder from "@/assets/images/recipe-finder.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import Card from "@/components/Card";
+
+const getRandomColor = () => {
+  const colorClass = [
+    "blue-text-gradient",
+    "pink-text-gradient",
+    "orange-text-gradient",
+    "green-text-gradient",
+    "purple-text-gradient",
+    "teal-text-gradient",
+    "yellow-text-gradient",
+  ];
+  const index = Math.round(Math.random() * (colorClass.length - 1));
+  return colorClass[index];
+};
 
 const portfolioProjects = [
   {
@@ -16,8 +32,9 @@ const portfolioProjects = [
       { title: "User authentication  using Context API." },
       { title: "Client-side routing using React Router." },
     ],
+    tech: ["reactjs", "tailwindcss", "context-api"],
     link: "https://fashion-fizz.vercel.app",
-    image: darkSaasLandingPage,
+    image: fashionFizz,
   },
   {
     title: "Chat App",
@@ -26,8 +43,17 @@ const portfolioProjects = [
       { title: "Expanded customer reach by 35%." },
       { title: "Increased brand awareness by 15%." },
     ],
+    tech: [
+      "expressjs",
+      "nodejs",
+      "reactjs",
+      "mongodb",
+      "mongoose",
+      "tailwindcss",
+    ],
+
     link: "https://chat-web-app-guai.onrender.com/",
-    image: lightSaasLandingPage,
+    image: ChatWebApp,
   },
   {
     title: "InstaFood",
@@ -38,8 +64,43 @@ const portfolioProjects = [
       { title: "Allows users to order food from menu." },
       { title: "Menu catalog with filtering options." },
     ],
+    tech: ["reactjs", "tailwindcss", "context-api"],
     link: "https://instafood-saied83.vercel.app/",
-    image: aiStartupLandingPage,
+    image: InstaFood,
+  },
+  {
+    title: "Job Finder",
+    results: [
+      {
+        title: "User can create, add delete jobs ",
+      },
+      { title: "Use MySQL database to store data" },
+      { title: "this is a MyERN stack project" },
+    ],
+    tech: [
+      "nodejs",
+      "mySQL",
+      "expressjs",
+      "reactjs",
+      "tailwindcss",
+      "mysql2",
+      "authenication",
+    ],
+    link: "https://github.com/saied83/find-your-dream-job-frontend",
+    image: FindYourDreamJob,
+  },
+  {
+    title: "Recipe Finder",
+    results: [
+      {
+        title: "Search any recipe and add to favorite",
+      },
+      { title: "State is managed by context-api" },
+      { title: "User can find recipe via youtube search query" },
+    ],
+    tech: ["reactjs", "tailwindcss", "youtube-query"],
+    link: "https://recipe-finder-saied83.vercel.app/",
+    image: RecipeFinder,
   },
 ];
 
@@ -78,7 +139,7 @@ export const ProjectsSection = () => {
                     </div>
 
                     <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                    <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+                    <ul className="hidden md:flex flex-col gap-2 mt-4 md:mt-5">
                       {project.results.map((result) => (
                         <li
                           key={result.title}
@@ -89,6 +150,13 @@ export const ProjectsSection = () => {
                         </li>
                       ))}
                     </ul>
+                    <div className="flex flex-wrap  mt-8 sm:mt-4 text-md sm:text-base ">
+                      {project.tech.map((item, index) => (
+                        <p key={index} className={`${getRandomColor()} ml-2`}>
+                          #<span>{item}</span>
+                        </p>
+                      ))}
+                    </div>
                     <a href={project.link}>
                       <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-8">
                         <span>Visit Live Site</span>
@@ -98,7 +166,7 @@ export const ProjectsSection = () => {
                   </div>
                   <div>
                     <Image
-                      className="rounded-lg  -my-4 aspect-auto md:-mb-0 lg:mt-0
+                      className="rounded-lg w-[200px] md:w-full -my-4 aspect-auto md:-mb-0 lg:mt-0
                       lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                       src={project.image}
                       alt={project.title}

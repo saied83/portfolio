@@ -8,10 +8,13 @@ import Image from "next/image";
 import logo from "@/assets/images/memoji-computer.png";
 import { scrollToById } from "./Header";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import Download from "@/assets/icons/download.png";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div className="pb-16 pt-16 md:pt-32 lg:pt-32  md:pb-48 lg:pb-52 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:liner-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -114,7 +117,13 @@ export const HeroSection = () => {
           <StarIcon className="size-28 text-emerald-300" />
         </HeroOrbit>
       </div>
-      <div className="container">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="container"
+      >
         <div className="flex flex-col items-center">
           <Image src={logo} className="size-[100px]" alt="saied" />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
@@ -126,17 +135,46 @@ export const HeroSection = () => {
             </div>
           </div>
         </div>
+        <div className="grid grid-cols-1 max-w-lg mx-auto gap-2 ">
+          <div>
+            <p className="font-serif text-3xl md:text-5xl text-center mt-6 md:mt-8 tracking-wide">
+              HELLO, I AM <span className="text-emerald-300 "> SAIED</span>
+            </p>
+          </div>
+          <div className="ml-auto mr-10">
+            <TypeAnimation
+              sequence={[
+                "Fullstack Web Developer",
+                2000,
+                "Web Designer",
+                2000,
+                "Competitive Programmer",
+                2000,
+              ]}
+              speed={50}
+              repeat={Infinity}
+              className="font-sans text-emerald-400 text-md md:text-lg italic "
+            />
+          </div>
+        </div>
         <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
+          <h1 className="font-serif text-xl md:text-2xl text-center mt-4 md:8 tracking-wide">
             Building Exceptional User Experiences
           </h1>
-          <p className="mt-4 md:text-lg text-center text-white/60">
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 1 }}
+            className="mt-4 md:text-lg  text-center text-white/60"
+          >
             Passionate and Self-driven Full Stack Web Developer specializing in
             turning design concepts into dynamic, user-friendly web
             applications. Explore my projects and technical skills.
-          </p>
+          </motion.p>
         </div>
-        <div className="flex md:flex-row justify-center flex-col items-center mt-8 gap-4">
+        <div className="flex md:flex-row justify-center flex-col items-center mt-4 md:mt-8 gap-4">
           <button
             onClick={() => scrollToById("project")}
             className="inline-flex items-center gap-2 border-white/15 border px-6 h-12 rounded-xl cursor-pointer z-[100]"
@@ -144,16 +182,20 @@ export const HeroSection = () => {
             <span className="font-semibold ">Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <Link
-            href={"https://linkedin.com/in/saied83"}
-            target="_blank"
-            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl cursor-pointer z-[100]"
+          <a
+            href={"/logo-color.png"}
+            download={"resume"}
+            className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-12 px-6 rounded-xl cursor-pointer z-[100]"
           >
-            <span>👋🏻</span>
-            <span className="font-semibold">Let&apos;s Connect</span>
-          </Link>
+            <span className="font-semibold">Download Resume</span>
+            <Image
+              src={Download}
+              alt="download icon"
+              className="size-6 animate-bounce "
+            />
+          </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
