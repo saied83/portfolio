@@ -6,6 +6,7 @@ import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
+import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
@@ -44,7 +45,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 mx-12 lg:py-24">
+    <section className="pb-16 mx-12 lg:py-24" id="project">
       <div className="container-sm mx-auto">
         <SectionHeader
           title="Featured Projects"
@@ -53,11 +54,14 @@ export const ProjectsSection = () => {
         />
 
         <div className="flex flex-col  mt-10 md:mt-20  gap-16">
-          {portfolioProjects.map((project) => {
+          {portfolioProjects.map((project, index) => {
             return (
-              <div
+              <Card
                 key={project.title}
-                className="bg-gray-800 rounded-3xl relative after:content-[''] after:absolute after:inset-0  z-0 after:z-10 overflow-hidden after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8  md:pt-12 md:px-10 after:pointer-events-none lg:pt-16 lg:px-20"
+                className="sticky lg:px-20 lg:pt-16 md:px-10 md:pt-12 pb-0 pt-8 px-8 "
+                style={{
+                  top: `calc(${64 + index * 40}px)`,
+                }}
               >
                 <div
                   className="absolute inset-0 -z-10 opacity-5"
@@ -94,14 +98,14 @@ export const ProjectsSection = () => {
                   </div>
                   <div>
                     <Image
-                      className="rounded-lg -my-4 aspect-auto md:-mb-0 lg:mt-0
+                      className="rounded-lg  -my-4 aspect-auto md:-mb-0 lg:mt-0
                       lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                       src={project.image}
                       alt={project.title}
                     />
                   </div>
                 </div>
-              </div>
+              </Card>
             );
           })}
         </div>

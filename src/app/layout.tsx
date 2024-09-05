@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "My Portfolio",
   description:
     "Future-focused full-stack developer with a strong foundation in computer science. Currently pursuing a BSc in CSE at BRAC University.",
+  icons: {
+    icon: "/logo.png", // /public path
+  },
 };
 
 export default function RootLayout({
@@ -24,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning={true}
+        id="home"
         className={twMerge(
           inter.variable,
           calistoga.variable,
-          " bg-gray-900 text-white antialiased font-sans"
+          " bg-gray-900  overflow-y-scroll overflow-x-hidden text-white antialiased font-sans"
         )}
       >
         {children}

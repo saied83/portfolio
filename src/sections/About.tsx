@@ -1,3 +1,4 @@
+"use client";
 import Card from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import StarIcon from "@/assets/icons/star.svg";
@@ -9,6 +10,8 @@ import Github from "@/assets/icons/github.svg";
 import { CardHeader } from "@/components/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems";
 import grainImage from "@/assets/images/grain.jpg";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const toolBoxItems = [
   {
@@ -79,8 +82,9 @@ const hobbies = [
 ];
 
 export const AboutSection = () => {
+  const constrainref = useRef(null);
   return (
-    <div className="py-16 ">
+    <div className="py-16 pt-12 lg:py-24 lg:pt-20 " id="about">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -88,7 +92,7 @@ export const AboutSection = () => {
           description="Learn more about who I am, what I do, and what inspires me"
         />
         <div className="mt-16 flex flex-col gap-6">
-          <Card className="p-6 lg:p-12 lg:pr-10 lg:text-justify bg-gradient-to-r from-emerald-500 to-sky-400 text-gray-900 overflow-hidden">
+          <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden">
             <div
               className="absolute inset-0 opacity-5 -z-10"
               style={{
@@ -96,32 +100,32 @@ export const AboutSection = () => {
               }}
             ></div>
             <div>
-              <div className="inline-flex gap-2  items-center">
-                <StarIcon className="size-9 text-white" />
+              <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
+                <StarIcon className="size-9 text-emerald-300" />
                 <h3 className="font-serif text-3xl f">My Instance</h3>
               </div>
-              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-gray-800 mt-4 md:text-lg  mx-auto lg:text-xl">
-                <p className="text-semibold text-black">
+              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
+                <p className="text-semibold text-white">
                   {" "}
                   I&apos;m a passionate and dedicated full-stack web developer
                   with a strong foundation in both frontend and backend
                   technologies.{" "}
                 </p>
                 <p>
-                  As a self-learner, I&apos;ve honed my skills through countless
-                  hours of online tutorials, courses, and hands-on projects.
+                  As a self-learner, I&apos;ve honed my skills through official
+                  documentations, online tutorials, and hands-on projects.
                   Currently pursuing a BSc in Computer Science at BRAC
-                  University, I&apos;ve successfully completed core courses like
-                  Object-Oriented Programming, Data Structures and Algorithms,
-                  and Database Management.
+                  University and my current CGPA is 3.9. I&apos;ve successfully
+                  completed core courses like Object-Oriented Programming, Data
+                  Structures and Algorithms, and Database Management.
                 </p>
 
-                <span className="text-extrabold text-2xl font-serif text-black mt-4">
+                <span className="text-extrabold text-2xl font-serif text-white mt-4">
                   My technical proficiency includes:
                 </span>
 
                 <p className="-mt-2">
-                  <span className="text-black text-xl  text-semibold">
+                  <span className="text-white text-xl  text-semibold">
                     Frontend:
                   </span>{" "}
                   JavaScript, HTML, CSS, Tailwind CSS, React, React Router Dom,
@@ -130,14 +134,14 @@ export const AboutSection = () => {
                 </p>
 
                 <p>
-                  <span className="text-black text-xl text-semibold">
+                  <span className="text-white text-xl text-semibold">
                     Backend:
                   </span>{" "}
                   Node.js, Express.js, MySQL, MongoDB, Mongoose
                 </p>
 
                 <p>
-                  <span className="text-black text-semibold">
+                  <span className="text-white text-semibold">
                     I&apos;m committed to continuous learning and growth.
                   </span>{" "}
                   To sharpen my problem-solving abilities, I&apos;ve tackled
@@ -145,7 +149,7 @@ export const AboutSection = () => {
                   participating in coding contests on Codeforces.
                 </p>
                 <p>
-                  <span className="text-black text-semibold">
+                  <span className="text-white text-semibold">
                     I&apos;m eager to apply my skills to real-world projects and
                     collaborate with talented teams.
                   </span>{" "}
@@ -164,11 +168,15 @@ export const AboutSection = () => {
                 digital experiences."
                 className="px-6 pt-6"
               />
-              <ToolBoxItems toolboxItems={toolBoxItems} className="" />
+              <ToolBoxItems
+                toolboxItems={toolBoxItems}
+                className=""
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+              />
               <ToolBoxItems
                 toolboxItems={toolBoxItems}
                 className="mt-6 "
-                itemsWrapperClassName="-translate-x-1/2"
+                itemsWrapperClassName="animate-move-right [animation-duration:30s]"
               />
             </Card>
             <Card className="h-[320px] p-0 flex flex-col">
@@ -177,21 +185,23 @@ export const AboutSection = () => {
                 description="Explore my interest and hobbies beyond the digital realm"
                 className="px-6 py-6"
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1 mb-10 " ref={constrainref}>
                 {hobbies.map((hobby) => (
-                  <div
+                  <motion.div
                     key={hobby.hobby}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r rounded-full py-1.5 from-emerald-300 to-sky-400 absolute"
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r rounded-full py-1.5 from-emerald-300 to-sky-400 absolute cursor-pointer"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
+                    drag
+                    dragConstraints={constrainref}
                   >
                     <span className="font-medium text-gray-950">
                       {hobby.hobby}
                     </span>
                     <span>{hobby.emoji}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
