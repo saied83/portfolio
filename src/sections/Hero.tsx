@@ -122,7 +122,7 @@ export const HeroSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.25 }}
-        className="container"
+        className="container mt-8"
       >
         <div className="flex flex-col items-center">
           <Image

@@ -3,6 +3,7 @@
 import Js from "@/assets/icons/square-js.svg";
 import Html from "@/assets/icons/html5.svg";
 import Css from "@/assets/icons/css3.svg";
+import Github from "@/assets/icons/github.svg";
 import React from "@/assets/icons/react.svg";
 import fashionFizz from "@/assets/images/fashion-fizz.png";
 import ChatWebApp from "@/assets/images/chat-web-app.png";
@@ -170,7 +171,7 @@ export const ProjectsSection = () => {
   }, [value]);
 
   return (
-    <section className="pb-16 mx-12 lg:py-24" id="project">
+    <section className="py-16 pt-12 lg:py-24 lg:pt-20" id="project">
       <div className="container mx-auto">
         <SectionHeader
           title="My Projects"
@@ -191,7 +192,7 @@ export const ProjectsSection = () => {
               onChange={(e) => setValue(e.target.value)}
               name=""
               id=""
-              className="text-black rounded-md px-[10px] py-1 text-sm"
+              className="text-black rounded-md px-2 md:px-[10px] py-1 text-sm"
             >
               <option
                 className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
@@ -270,12 +271,19 @@ export const ProjectsSection = () => {
                         />
                       ))}
                     </div>
-                    <a href={project.link}>
-                      <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-8">
-                        <span>Visit Live Site</span>
-                        <ArrowUpRightIcon className="size-4" />
-                      </button>
-                    </a>
+                    <div className="inline-flex mt-8 gap-8 items-center">
+                      <a href={project.link}>
+                        <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 md:w-auto px-8">
+                          <span>Visit Live Site</span>
+                          <ArrowUpRightIcon className="size-4" />
+                        </button>
+                      </a>
+                      <a href={project.link}>
+                        <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
+                          <Github className="size-8" />
+                        </button>
+                      </a>
+                    </div>
                   </div>
                   <div className="w-full">
                     <Image
