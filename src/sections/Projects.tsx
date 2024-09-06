@@ -274,7 +274,7 @@ export const ProjectsSection = () => {
                     <div className="inline-flex mt-8 gap-8 items-center">
                       <a href={project.link}>
                         <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 md:w-auto px-8">
-                          <span>Visit Live Site</span>
+                          <span>Live Site</span>
                           <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
