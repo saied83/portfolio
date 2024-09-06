@@ -278,7 +278,7 @@ export const ProjectsSection = () => {
                           <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
-                      <a href={project.link}>
+                      <a href={project.github}>
                         <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
                           <Github className="size-8" />
                         </button>
