@@ -5,7 +5,7 @@ import HeroOrbit from "@/components/HeroOrbit";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import Image from "next/image";
-import logo from "@/assets/images/memoji-computer.png";
+// import logo from "@/assets/images/memoji-computer.png";
 import { scrollToById } from "./Header";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -121,11 +121,17 @@ export const HeroSection = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.25 }}
         className="container"
       >
         <div className="flex flex-col items-center">
-          <Image src={logo} className="size-[100px]" alt="saied" />
+          <Image
+            src="/pic.png"
+            width={150}
+            height={150}
+            className="size-[100px]"
+            alt="saied"
+          />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
@@ -165,7 +171,11 @@ export const HeroSection = () => {
           <p className="mt-4 md:text-lg  text-center text-white/60">
             Passionate and Self-driven Full Stack Web Developer specializing in
             turning design concepts into dynamic, user-friendly web
-            applications. Explore my projects and technical skills.
+            applications.{" "}
+            <span className="hidden md:block">
+              {" "}
+              Explore my projects and technical skills.
+            </span>
           </p>
         </div>
         <div className="flex md:flex-row justify-center flex-col items-center mt-4 md:mt-8 gap-4">
@@ -181,7 +191,7 @@ export const HeroSection = () => {
             download={"resume"}
             className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-12 px-6 rounded-xl cursor-pointer z-[100]"
           >
-            <span className="font-semibold">Download Resume</span>
+            <span className="font-semibold">Resume</span>
             <Image
               src={Download}
               alt="download icon"

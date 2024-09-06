@@ -12,11 +12,39 @@ import ToolBoxItems from "@/components/ToolBoxItems";
 import grainImage from "@/assets/images/grain.jpg";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import tailwind from "@/assets/icons/tailwindcss.svg";
+import BootStrap from "@/assets/icons/bootstrap-svgrepo-com.svg";
 
-const toolBoxItems = [
+import next from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
+import typejs from "@/assets/icons/typescript-svgrepo-com.svg";
+import node from "@/assets/icons/node-dot-js-svgrepo-com.svg";
+import mongo from "@/assets/icons/mongodb-svgrepo-com (2).svg";
+import mysql from "@/assets/icons/mysql-svgrepo-com.svg";
+import rrd from "@/assets/icons/react-router-svgrepo-com.svg";
+import express from "@/assets/icons/express-svgrepo-com.svg";
+import Reveal from "@/components/Reveal";
+
+const toolBoxFrontEndItems = [
   {
     title: "JavaScript",
     iconType: Js,
+  },
+  {
+    title: "React",
+    iconType: React,
+  },
+
+  {
+    title: "Nextjs",
+    iconType: next,
+  },
+  {
+    title: "TypeScript",
+    iconType: typejs,
+  },
+  {
+    title: "React-router",
+    iconType: rrd,
   },
   {
     title: "HTML5",
@@ -27,8 +55,31 @@ const toolBoxItems = [
     iconType: Css,
   },
   {
-    title: "React",
-    iconType: React,
+    title: "TailwindCSS",
+    iconType: tailwind,
+  },
+  {
+    title: "BootStrap",
+    iconType: BootStrap,
+  },
+];
+
+const toolBoxBackEndItems = [
+  {
+    title: "Nodejs",
+    iconType: node,
+  },
+  {
+    title: "Expressjs",
+    iconType: express,
+  },
+  {
+    title: "MongoDB",
+    iconType: mongo,
+  },
+  {
+    title: "MySQL",
+    iconType: mysql,
   },
   {
     title: "Github",
@@ -92,56 +143,39 @@ export const AboutSection = () => {
           description="Learn more about who I am, what I do, and what inspires me"
         />
         <div className="mt-16 flex flex-col gap-6">
-          <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden">
-            <div
-              className="absolute inset-0 opacity-5 -z-10"
-              style={{
-                backgroundImage: `url(${grainImage})`,
-              }}
-            ></div>
-            <div>
-              <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
-                <StarIcon className="size-9 text-emerald-300" />
-                <h3 className="font-serif text-3xl f">My Instance</h3>
+          <Reveal>
+            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden">
+              <div
+                className="absolute inset-0 opacity-5 -z-10"
+                style={{
+                  backgroundImage: `url(${grainImage})`,
+                }}
+              ></div>
+              <div>
+                <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
+                  <StarIcon className="size-9 text-emerald-300" />
+                  <h3 className="font-serif text-3xl f">My Instance</h3>
+                </div>
+                <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
+                  <p className="text-semibold text-white">
+                    {" "}
+                    I&apos;m a passionate and dedicated full-stack web developer
+                    with a strong foundation in both frontend and backend
+                    technologies.{" "}
+                  </p>
+                  <p>
+                    As a self-learner, I&apos;ve honed my skills through
+                    official documentations, online tutorials, and hands-on
+                    projects. Currently pursuing a BSc in Computer Science at
+                    BRAC University and my current CGPA is 3.9. I&apos;ve
+                    successfully completed core courses like Object-Oriented
+                    Programming, Data Structures and Algorithms, and Database
+                    Management.
+                  </p>
+                </div>
               </div>
-              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
-                <p className="text-semibold text-white">
-                  {" "}
-                  I&apos;m a passionate and dedicated full-stack web developer
-                  with a strong foundation in both frontend and backend
-                  technologies.{" "}
-                </p>
-                <p>
-                  As a self-learner, I&apos;ve honed my skills through official
-                  documentations, online tutorials, and hands-on projects.
-                  Currently pursuing a BSc in Computer Science at BRAC
-                  University and my current CGPA is 3.9. I&apos;ve successfully
-                  completed core courses like Object-Oriented Programming, Data
-                  Structures and Algorithms, and Database Management.
-                </p>
-
-                <span className="text-extrabold text-2xl font-serif text-white mt-4">
-                  My technical proficiency includes:
-                </span>
-
-                <p className="-mt-2">
-                  <span className="text-white text-xl  text-semibold">
-                    Frontend:
-                  </span>{" "}
-                  JavaScript, HTML, CSS, Tailwind CSS, React, React Router Dom,
-                  Authorization, Authentication, Data Fetching, State Management
-                  (Context API), Framer Motion, Next.js, TypeScript,
-                </p>
-
-                <p>
-                  <span className="text-white text-xl text-semibold">
-                    Backend:
-                  </span>{" "}
-                  Node.js, Express.js, MySQL, MongoDB, Mongoose
-                </p>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </Reveal>
           <div className="md:grid md:grid-cols-2 flex flex-col gap-6 ">
             <Card className=" h-[320px] p-0 ">
               <CardHeader
@@ -151,16 +185,17 @@ export const AboutSection = () => {
                 className="px-6 pt-6"
               />
               <ToolBoxItems
-                toolboxItems={toolBoxItems}
+                toolboxItems={toolBoxFrontEndItems}
                 className=""
                 itemsWrapperClassName="animate-move-left [animation-duration:30s]"
               />
               <ToolBoxItems
-                toolboxItems={toolBoxItems}
+                toolboxItems={toolBoxBackEndItems}
                 className="mt-6 "
                 itemsWrapperClassName="animate-move-right [animation-duration:30s]"
               />
             </Card>
+
             <Card className="h-[320px] p-0 flex flex-col">
               <CardHeader
                 title="Beyond the Code"

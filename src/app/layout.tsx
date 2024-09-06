@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Calistoga } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import StarsCanvas from "@/components/StarBackground";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -36,7 +35,6 @@ export default function RootLayout({
           " bg-gray-900  overflow-y-scroll overflow-x-hidden text-white antialiased font-sans"
         )}
       >
-        <StarsCanvas />
         {children}
       </body>
     </html>

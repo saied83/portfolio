@@ -22,16 +22,7 @@ export const Header = () => {
         >
           Home
         </a>
-        <a
-          href=""
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToById("project");
-          }}
-          className="nav-item"
-        >
-          Projects
-        </a>
+
         <a
           href=""
           onClick={(e) => {
@@ -41,6 +32,16 @@ export const Header = () => {
           className="nav-item"
         >
           About
+        </a>
+        <a
+          href=""
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToById("project");
+          }}
+          className="nav-item"
+        >
+          Projects
         </a>
         <a
           href=""

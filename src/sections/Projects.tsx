@@ -1,6 +1,23 @@
+"use client";
+
+import Js from "@/assets/icons/square-js.svg";
+import Html from "@/assets/icons/html5.svg";
+import Css from "@/assets/icons/css3.svg";
+import React from "@/assets/icons/react.svg";
 import fashionFizz from "@/assets/images/fashion-fizz.png";
 import ChatWebApp from "@/assets/images/chat-web-app.png";
 import InstaFood from "@/assets/images/instafood.png";
+import Tailwind from "@/assets/icons/tailwindcss.svg";
+import BootStrap from "@/assets/icons/bootstrap-svgrepo-com.svg";
+
+import Next from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
+import Ts from "@/assets/icons/typescript-svgrepo-com.svg";
+import Mongoose from "@/assets/icons/mammal-animal-shape-of-mongoose-svgrepo-com.svg";
+import Node from "@/assets/icons/node-dot-js-svgrepo-com.svg";
+import Mongo from "@/assets/icons/mongodb-svgrepo-com (2).svg";
+import Mysql from "@/assets/icons/mysql-svgrepo-com.svg";
+import Rrd from "@/assets/icons/react-router-svgrepo-com.svg";
+import Express from "@/assets/icons/express-svgrepo-com.svg";
 import FindYourDreamJob from "@/assets/images/find-your-dream-job.png";
 import RecipeFinder from "@/assets/images/recipe-finder.png";
 import Image from "next/image";
@@ -9,20 +26,10 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import Card from "@/components/Card";
-
-const getRandomColor = () => {
-  const colorClass = [
-    "blue-text-gradient",
-    "pink-text-gradient",
-    "orange-text-gradient",
-    "green-text-gradient",
-    "purple-text-gradient",
-    "teal-text-gradient",
-    "yellow-text-gradient",
-  ];
-  const index = Math.round(Math.random() * (colorClass.length - 1));
-  return colorClass[index];
-};
+import TechIcon from "@/components/TechIcon";
+import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { off } from "process";
 
 const portfolioProjects = [
   {
@@ -32,9 +39,12 @@ const portfolioProjects = [
       { title: "User authentication  using Context API." },
       { title: "Client-side routing using React Router." },
     ],
-    tech: ["reactjs", "tailwindcss", "context-api"],
+    tech: ["react", "tailwind", "rrd", "js", "css", "html", "frontend"],
+    techIcon: [React, Tailwind, Rrd, Js, Css, Html],
     link: "https://fashion-fizz.vercel.app",
     image: fashionFizz,
+    github: "https://github.com/saied83/fashion-fizz",
+    featured: true,
   },
   {
     title: "Chat App",
@@ -44,16 +54,37 @@ const portfolioProjects = [
       { title: "Increased brand awareness by 15%." },
     ],
     tech: [
-      "expressjs",
-      "nodejs",
-      "reactjs",
-      "mongodb",
+      "express",
+      "node",
+      "react",
+      "mongo",
       "mongoose",
-      "tailwindcss",
+      "tailwind",
+      "rrd",
+      "js",
+      "mern",
+    ],
+    techIcon: [
+      Express,
+      Node,
+      React,
+      Mongo,
+      Mongoose,
+      Tailwind,
+      Rrd,
+      Js,
+      Ts,
+      Next,
+      Mysql,
+      BootStrap,
+      Html,
+      Css,
     ],
 
     link: "https://chat-web-app-guai.onrender.com/",
     image: ChatWebApp,
+    github: "https://github.com/saied83/fashion-fizz",
+    featured: true,
   },
   {
     title: "InstaFood",
@@ -64,9 +95,12 @@ const portfolioProjects = [
       { title: "Allows users to order food from menu." },
       { title: "Menu catalog with filtering options." },
     ],
-    tech: ["reactjs", "tailwindcss", "context-api"],
+    tech: ["react", "tailwind", "rrd", "frontend"],
+    techIcon: [React, Tailwind, Rrd, Js, Html, Css],
     link: "https://instafood-saied83.vercel.app/",
     image: InstaFood,
+    github: "https://github.com/saied83/fashion-fizz",
+    featured: true,
   },
   {
     title: "Job Finder",
@@ -78,16 +112,20 @@ const portfolioProjects = [
       { title: "this is a MyERN stack project" },
     ],
     tech: [
-      "nodejs",
-      "mySQL",
-      "expressjs",
-      "reactjs",
-      "tailwindcss",
-      "mysql2",
-      "authenication",
+      "node",
+      "sql",
+      "express",
+      "react",
+      "tailwind",
+      "rrd",
+      "frontend",
+      "backend",
     ],
+    techIcon: [Express, Node, React, Tailwind, Rrd, Js, Mysql, Html, Css],
     link: "https://github.com/saied83/find-your-dream-job-frontend",
     image: FindYourDreamJob,
+    github: "https://github.com/saied83/fashion-fizz",
+    featured: false,
   },
   {
     title: "Recipe Finder",
@@ -98,30 +136,138 @@ const portfolioProjects = [
       { title: "State is managed by context-api" },
       { title: "User can find recipe via youtube search query" },
     ],
-    tech: ["reactjs", "tailwindcss", "youtube-query"],
+    tech: ["react", "tailwind", "rrd", "frontend"],
+    techIcon: [React, Tailwind, Rrd, Js, Html, Css],
     link: "https://recipe-finder-saied83.vercel.app/",
     image: RecipeFinder,
+    github: "https://github.com/saied83/fashion-fizz",
+    featured: false,
   },
 ];
 
+interface ObjectOfArray {
+  title: string;
+  result: Array<{
+    title: string;
+  }>;
+  tech: string[];
+  techIcon: React.ElementType[];
+  link: string;
+  image: React.ElementType;
+  github: string;
+  featured: boolean;
+}
+
 export const ProjectsSection = () => {
+  const [menu, setMenu] = useState(true);
+  const [value, setValue] = useState("react");
+  // @ts-ignore
+  const [filterProjects, setFilterProjects] = useState([]);
+
+  const setProjects = () => {
+    let updateProject = portfolioProjects.slice();
+    if (menu) {
+      updateProject = updateProject.filter((item) => item.featured === true);
+    } // @ts-ignore
+    setFilterProjects(updateProject);
+  };
+
+  useEffect(() => {
+    setProjects();
+  }, [menu]);
+
+  useEffect(() => {
+    let updateProject = portfolioProjects.slice();
+    updateProject = updateProject.filter((item) => item.tech.includes(value));
+    // @ts-ignore
+    setFilterProjects(updateProject);
+  }, [value]);
+
   return (
     <section className="pb-16 mx-12 lg:py-24" id="project">
       <div className="container-sm mx-auto">
         <SectionHeader
-          title="Featured Projects"
+          title="My Projects"
           eyebrow="Real-world Results"
           description="See how I transformed concepts into engaging digital experiences."
         />
+        <hr className="w-full h-[1px] border-none bg-gray-300/40 mt-6 md:mt-6 lg:mt-12" />
 
         <div className="flex flex-col  mt-10 md:mt-20  gap-16">
-          {portfolioProjects.map((project, index) => {
+          {/* Filter  */}
+          <div className=" sticky top-16 mt-4 -mb-10 inline-flex justify-between">
+            <div className="flex gap-2 p-0.5 border-white/15 ">
+              <p
+                onClick={() => setMenu((prev) => !menu)}
+                className={`px-4 py-1   text-sm cursor-pointer   backdrop-blur rounded-lg
+                  ${
+                    menu === true
+                      ? " bg-white text-gray-900"
+                      : "border border-gray-400 bg-white/10"
+                  }
+                `}
+              >
+                Featured
+              </p>
+
+              <p
+                onClick={() => setMenu((prev) => !menu)}
+                className={`px-4 py-1   text-sm cursor-pointer   backdrop-blur rounded-lg
+                  ${
+                    menu === false
+                      ? " bg-white text-gray-900"
+                      : "border border-gray-400 bg-white/10"
+                  }
+                `}
+              >
+                All
+              </p>
+            </div>
+            <select
+              onChange={(e) => setValue(e.target.value)}
+              name=""
+              id=""
+              className="text-black rounded-md px-[10px] py-1 text-sm"
+            >
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="react"
+              >
+                Reactjs
+              </option>
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="next"
+              >
+                Nextjs
+              </option>
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="mern"
+              >
+                MERN
+              </option>
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="frontend"
+              >
+                Front-end
+              </option>
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="backend"
+              >
+                Back-end
+              </option>
+            </select>
+          </div>
+          {filterProjects.map((project, index) => {
             return (
               <Card
                 key={project.title}
                 className="sticky lg:px-20 lg:pt-16 md:px-10 md:pt-12 pb-0 pt-8 px-8 "
                 style={{
-                  top: `calc(${64 + index * 40}px)`,
+                  top: `calc(${110 + index * 30}px)`,
                 }}
               >
                 <div
@@ -150,11 +296,14 @@ export const ProjectsSection = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex flex-wrap  mt-8 sm:mt-4 text-md sm:text-base ">
-                      {project.tech.map((item, index) => (
-                        <p key={index} className={`${getRandomColor()} ml-2`}>
-                          #<span>{item}</span>
-                        </p>
+                    {/* Technology icons  */}
+                    <div className="flex flex-wrap gap-2  mt-8 sm:mt-4 text-md sm:text-base ">
+                      {project.techIcon.map((item, index) => (
+                        <TechIcon
+                          className="size-6 md:size-8 md:mt-6"
+                          key={index}
+                          component={item}
+                        />
                       ))}
                     </div>
                     <a href={project.link}>
@@ -164,10 +313,10 @@ export const ProjectsSection = () => {
                       </button>
                     </a>
                   </div>
-                  <div>
+                  <div className="w-full">
                     <Image
-                      className="rounded-lg w-[200px] md:w-full -my-4 aspect-auto md:-mb-0 lg:mt-0
-                      lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                      className="rounded-lg   -my-4 aspect-auto md:-mb-0 lg:mt-0
+                      lg:absolute lg:h-full md:w-auto lg:max-w-none"
                       src={project.image}
                       alt={project.title}
                     />
