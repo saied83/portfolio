@@ -1,5 +1,5 @@
+// @ts-nocheck
 "use client";
-
 import Js from "@/assets/icons/square-js.svg";
 import Html from "@/assets/icons/html5.svg";
 import Css from "@/assets/icons/css3.svg";
@@ -159,68 +159,32 @@ interface ObjectOfArray {
 }
 
 export const ProjectsSection = () => {
-  const [menu, setMenu] = useState(true);
   const [value, setValue] = useState("react");
-  // @ts-ignore
   const [filterProjects, setFilterProjects] = useState([]);
-
-  const setProjects = () => {
-    let updateProject = portfolioProjects.slice();
-    if (menu) {
-      updateProject = updateProject.filter((item) => item.featured === true);
-    } // @ts-ignore
-    setFilterProjects(updateProject);
-  };
-
-  useEffect(() => {
-    setProjects();
-  }, [menu]);
 
   useEffect(() => {
     let updateProject = portfolioProjects.slice();
     updateProject = updateProject.filter((item) => item.tech.includes(value));
-    // @ts-ignore
+
     setFilterProjects(updateProject);
   }, [value]);
 
   return (
     <section className="pb-16 mx-12 lg:py-24" id="project">
-      <div className="container-sm mx-auto">
+      <div className="container mx-auto">
         <SectionHeader
           title="My Projects"
           eyebrow="Real-world Results"
           description="See how I transformed concepts into engaging digital experiences."
         />
-        <hr className="w-full h-[1px] border-none bg-gray-300/40 mt-6 md:mt-6 lg:mt-12" />
+        <hr className="w-auto mx-16 h-[1px] border-none bg-gray-300/40 mt-6 md:mt-6 lg:mt-12" />
 
         <div className="flex flex-col  mt-10 md:mt-20  gap-16">
           {/* Filter  */}
-          <div className=" sticky top-16 mt-4 -mb-10 inline-flex justify-between">
+          <div className=" sticky top-16 mt-4 -mb-10 inline-flex justify-between md:mx-8 md:-mt-16">
             <div className="flex gap-2 p-0.5 border-white/15 ">
-              <p
-                onClick={() => setMenu((prev) => !menu)}
-                className={`px-4 py-1   text-sm cursor-pointer   backdrop-blur rounded-lg
-                  ${
-                    menu === true
-                      ? " bg-white text-gray-900"
-                      : "border border-gray-400 bg-white/10"
-                  }
-                `}
-              >
-                Featured
-              </p>
-
-              <p
-                onClick={() => setMenu((prev) => !menu)}
-                className={`px-4 py-1   text-sm cursor-pointer   backdrop-blur rounded-lg
-                  ${
-                    menu === false
-                      ? " bg-white text-gray-900"
-                      : "border border-gray-400 bg-white/10"
-                  }
-                `}
-              >
-                All
+              <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
+                All Projects
               </p>
             </div>
             <select
