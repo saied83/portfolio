@@ -10,6 +10,11 @@ import ChatWebApp from "@/assets/images/chat-web-app.png";
 import InstaFood from "@/assets/images/instafood.png";
 import Tailwind from "@/assets/icons/tailwindcss.svg";
 import BootStrap from "@/assets/icons/bootstrap-svgrepo-com.svg";
+import StudentInfo from "@/assets/images/student.png";
+import Weather from "@/assets/images/weather.png";
+import LoginSignup from "@/assets/images/login.png";
+import Slider from "@/assets/images/slider.png";
+import NewYear from "@/assets/images/slider.png";
 
 import Next from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
 import Ts from "@/assets/icons/typescript-svgrepo-com.svg";
@@ -40,7 +45,7 @@ const portfolioProjects = [
       { title: "User authentication  using Context API." },
       { title: "Client-side routing using React Router." },
     ],
-    tech: ["react", "tailwind", "rrd", "js", "css", "html", "frontend"],
+    tech: ["react", "tailwind", "rrd", "js", "frontend"],
     techIcon: [React, Tailwind, Rrd, Js, Css, Html],
     link: "https://fashion-fizz.vercel.app",
     image: fashionFizz,
@@ -48,11 +53,25 @@ const portfolioProjects = [
     featured: true,
   },
   {
-    title: "Chat App",
+    title: "My Portfolio",
+    results: [
+      { title: "A modern portfolio website build with Next.js." },
+      { title: "Solar system animation with tailwindCSS" },
+      { title: "Client and server-side generation page" },
+    ],
+    tech: ["next", "react", "tailwind", "ts", "frontend"],
+    techIcon: [Next, React, Tailwind, Ts, Css, Html],
+    link: "https://portfolio-saied83.vercel.app/",
+    image: fashionFizz,
+    github: "https://github.com/saied83/portfolio",
+    featured: true,
+  },
+  {
+    title: "Chat Web App",
     results: [
       { title: "Real-time messaging web app." },
-      { title: "Expanded customer reach by 35%." },
-      { title: "Increased brand awareness by 15%." },
+      { title: "Build with socket.io with notification sound." },
+      { title: "Store and Manage data with mongoDB" },
     ],
     tech: [
       "express",
@@ -84,7 +103,7 @@ const portfolioProjects = [
 
     link: "https://chat-web-app-guai.onrender.com/",
     image: ChatWebApp,
-    github: "https://github.com/saied83/fashion-fizz",
+    github: "https://github.com/saied83/chat-web-app",
     featured: true,
   },
   {
@@ -100,7 +119,7 @@ const portfolioProjects = [
     techIcon: [React, Tailwind, Rrd, Js, Html, Css],
     link: "https://instafood-saied83.vercel.app/",
     image: InstaFood,
-    github: "https://github.com/saied83/fashion-fizz",
+    github: "https://github.com/saied83/instafood",
     featured: true,
   },
   {
@@ -110,7 +129,7 @@ const portfolioProjects = [
         title: "User can create, add delete jobs ",
       },
       { title: "Use MySQL database to store data" },
-      { title: "this is a MyERN stack project" },
+      { title: "Routing with react-router-dom" },
     ],
     tech: [
       "node",
@@ -125,7 +144,7 @@ const portfolioProjects = [
     techIcon: [Express, Node, React, Tailwind, Rrd, Js, Mysql, Html, Css],
     link: "https://github.com/saied83/find-your-dream-job-frontend",
     image: FindYourDreamJob,
-    github: "https://github.com/saied83/fashion-fizz",
+    github: "https://github.com/saied83/find-your-dream-job-backend",
     featured: false,
   },
   {
@@ -141,8 +160,72 @@ const portfolioProjects = [
     techIcon: [React, Tailwind, Rrd, Js, Html, Css],
     link: "https://recipe-finder-saied83.vercel.app/",
     image: RecipeFinder,
-    github: "https://github.com/saied83/fashion-fizz",
+    github: "https://github.com/saied83/recipe-finder",
     featured: false,
+  },
+  {
+    title: "Student Info Server",
+    results: [
+      {
+        title: "Get Student Information with Rest API",
+      },
+      { title: "CRUD operation managed with MySQL" },
+      { title: "Used Express.js for the backend" },
+    ],
+    tech: ["express", "Mysql", "node", "backend"],
+    techIcon: [Mysql, Express, Node, Tailwind, Rrd, Js, Html, Css],
+    link: "https://github.com/saied83/student-info-server",
+    image: StudentInfo,
+    github: "https://github.com/saied83/student-info-server",
+    featured: false,
+  },
+  {
+    title: "Weather App",
+    results: [
+      {
+        title: "Get weather information by city name.",
+      },
+      { title: "Used weather api with fetch" },
+      { title: "Deploy on netlify" },
+    ],
+    tech: ["html", "css", "js"],
+    techIcon: [Js, Html, Css],
+    link: "https://weater-app-saied83.netlify.app/",
+    image: Weather,
+    github: "https://github.com/saied83/weather-app",
+    featured: false,
+  },
+  {
+    title: "Login Signup Page",
+    results: [
+      {
+        title: "Build Login and Signup page with HTML and CSS",
+      },
+      { title: "Add vanilla JavaScript to add Functionality" },
+      { title: "Deploy on Github" },
+    ],
+    tech: ["html", "css", "js"],
+    techIcon: [Js, Html, Css],
+    link: "https://saied83.github.io/login-signup-page/",
+    image: LoginSignup,
+    github: "https://github.com/saied83/login-signup-page",
+    featured: false,
+  },
+  {
+    title: "Slider",
+    results: [
+      {
+        title: "Build Slider with HTML and CSS",
+      },
+      { title: "Add vanilla JavaScript to add Functionality" },
+      { title: "Animate through vanilla CSS" },
+    ],
+    tech: ["html", "css", "js"],
+    techIcon: [Js, Html, Css],
+    link: "https://saied83.github.io/slider-js/",
+    github: "https://github.com/saied83/slider-js",
+    image: Slider,
+    featured: true,
   },
 ];
 
@@ -272,13 +355,13 @@ export const ProjectsSection = () => {
                       ))}
                     </div>
                     <div className="inline-flex mt-8 gap-8 items-center">
-                      <a href={project.link}>
+                      <a href={project.link} target="_blank">
                         <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 md:w-auto px-8">
                           <span>Live Site</span>
                           <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
-                      <a href={project.github}>
+                      <a href={project.github} target="_blank">
                         <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
                           <Github className="size-8" />
                         </button>
