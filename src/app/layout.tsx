@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Future-focused full-stack developer with a strong foundation in computer science. Currently pursuing a BSc in CSE at BRAC University.",
   icons: {
-    icon: "/logo.png", // /public path
+    icon: "/logo.svg", // /public path
   },
 };
 

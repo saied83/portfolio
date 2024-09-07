@@ -15,6 +15,7 @@ import Weather from "@/assets/images/weather.png";
 import LoginSignup from "@/assets/images/login.png";
 import Slider from "@/assets/images/slider.png";
 import NewYear from "@/assets/images/slider.png";
+import Portfolio from "@/assets/images/portfolio.png";
 
 import Next from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
 import Ts from "@/assets/icons/typescript-svgrepo-com.svg";
@@ -62,7 +63,7 @@ const portfolioProjects = [
     tech: ["next", "react", "tailwind", "ts", "frontend"],
     techIcon: [Next, React, Tailwind, Ts, Css, Html],
     link: "https://portfolio-saied83.vercel.app/",
-    image: fashionFizz,
+    image: Portfolio,
     github: "https://github.com/saied83/portfolio",
     featured: true,
   },
