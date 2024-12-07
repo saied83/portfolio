@@ -23,6 +23,11 @@ import mysql from "@/assets/icons/mysql-svgrepo-com.svg";
 import rrd from "@/assets/icons/react-router-svgrepo-com.svg";
 import express from "@/assets/icons/express-svgrepo-com.svg";
 import Reveal from "@/components/Reveal";
+import tars from "@/assets/images/tars.jpeg";
+import Image from "next/image";
+import Link from "next/link";
+import webpack from "@/assets/icons/webpack.svg";
+import redux from "@/assets/icons/redux-store.svg";
 
 const toolBoxFrontEndItems = [
   {
@@ -33,7 +38,10 @@ const toolBoxFrontEndItems = [
     title: "React",
     iconType: React,
   },
-
+  {
+    title: "Redux",
+    iconType: redux,
+  },
   {
     title: "Nextjs",
     iconType: next,
@@ -41,6 +49,10 @@ const toolBoxFrontEndItems = [
   {
     title: "TypeScript",
     iconType: typejs,
+  },
+  {
+    title: "Webpack",
+    iconType: webpack,
   },
   {
     title: "React-router",
@@ -159,19 +171,79 @@ export const AboutSection = () => {
                 <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
                   <p className="text-semibold text-white">
                     {" "}
-                    I&apos;m a passionate and dedicated full-stack web developer
-                    with a strong foundation in both frontend and backend
-                    technologies.{" "}
+                    I&apos;m a passionate and dedicated frontend web developer
+                    with a strong foundation in JavaScript, typescript and
+                    frontend technologies like React.{" "}
                   </p>
                   <p>
                     As a self-learner, I&apos;ve honed my skills through
                     official documentations, online tutorials, and hands-on
-                    projects. Currently pursuing a BSc in Computer Science at
+                    projects. Currently working as a Frontend Developer Intern
+                    at Tars Industries and pursuing a BSc in Computer Science at
                     BRAC University and my current CGPA is 3.9. I&apos;ve
                     successfully completed core courses like Object-Oriented
                     Programming, Data Structures and Algorithms, and Database
                     Management.
                   </p>
+                </div>
+              </div>
+            </Card>
+          </Reveal>
+          <Reveal width="100%">
+            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden w-full">
+              <div
+                className="absolute inset-0 opacity-5 -z-10"
+                style={{
+                  backgroundImage: `url(${grainImage})`,
+                }}
+              ></div>
+
+              <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text ">
+                <StarIcon className="size-9 text-emerald-300" />
+                <h3 className="font-serif text-3xl f">Experience</h3>
+              </div>
+              <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
+                <div className="flex md:flex-row flex-col justify-start items-center mt-2 gap-6">
+                  <Image
+                    src={tars}
+                    alt="tars"
+                    className="w-24 h-24 object-top rounded-full"
+                  />
+                  <div className="flex flex-col justify-start item-start gap-1 md:gap-3 -mt-1.5 self-start">
+                    <p className="text-white text-[18px] md:text-[24px]">
+                      Frontend Developer Intern
+                    </p>
+                    <p className="text-[14px] md:text-[20px]">
+                      October 10, 2024 - January 9, 2025
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full mt-2 md:mt-4 ml-3">
+                  <ul className="list-disc w-full text-left">
+                    <li className="w-full">
+                      Build a Social Media Platform{" "}
+                      <Link
+                        target="_blank"
+                        href="https://tarsuniverse.com"
+                        className="text-blue-300"
+                      >
+                        Tars Universe
+                      </Link>{" "}
+                      from scratch with TypeScript, Redux, React, TailwindCSS.
+                    </li>
+                    <li className="w-full">
+                      Implement Real-time Chat Functionality using WebSockets
+                      for instant communication.
+                    </li>
+                    <li className="w-full">
+                      Integrate User Authentication and Authorization with JWT
+                      tokens and OAuth.
+                    </li>
+                    <li className="w-full">
+                      Create Post and Comment features with rich text editing,
+                      image uploads, and likes/dislikes.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </Card>

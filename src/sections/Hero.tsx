@@ -150,11 +150,9 @@ export const HeroSection = () => {
           <div className="ml-auto mr-10">
             <TypeAnimation
               sequence={[
-                "Fullstack Web Developer",
+                "Frontend Web Developer",
                 2000,
-                "Web Designer",
-                2000,
-                "Competitive Programmer",
+                "Problem Solver",
                 2000,
               ]}
               speed={50}
@@ -169,7 +167,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="mt-4 md:text-lg  text-center text-white/60">
-            Passionate and Self-driven Full Stack Web Developer specializing in
+            Passionate and Self-driven Frontend Web Developer specializing in
             turning design concepts into dynamic, user-friendly web
             applications.{" "}
             <span className="hidden md:block">
@@ -183,19 +181,19 @@ export const HeroSection = () => {
             onClick={() => scrollToById("project")}
             className="inline-flex items-center gap-2 border-white/15 border px-6 h-12 rounded-xl cursor-pointer z-[100]"
           >
-            <span className="font-semibold ">Explore My Work</span>
+            <span className="font-semibold ">My Work</span>
             <ArrowDown className="size-4" />
           </button>
           <a
             href={"/resume_saiedur_rahman_saied.pdf"}
             download={"resume_saiedur_rahman_saied.pdf"}
-            className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-12 px-6 rounded-xl cursor-pointer z-[100]"
+            className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-11 px-6 rounded-xl cursor-pointer z-[100]"
           >
             <span className="font-semibold">Resume</span>
             <Image
               src={Download}
               alt="download icon"
-              className="size-6 animate-bounce "
+              className="size-6 mt-2 animate-bounce "
             />
           </a>
         </div>

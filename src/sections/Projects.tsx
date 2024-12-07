@@ -37,8 +37,27 @@ import TechIcon from "@/components/TechIcon";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { off } from "process";
+import Redux from "@/assets/icons/redux-store.svg";
+import tarsUniverse from "@/assets/images/tarsuniverse.png";
 
 const portfolioProjects = [
+  {
+    title: "Tars Universe",
+    results: [
+      { title: "Create content, Explore & interact" },
+      {
+        title: "Real-time notifications,Manage connections",
+      },
+      { title: "Web Socket for messaging." },
+      { title: "Implement Redux for state management." },
+    ],
+    tech: ["react", "redux", "tailwind", "rrd", "js", "frontend"],
+    techIcon: [React, Redux, Tailwind, Rrd, Js, Css, Html],
+    link: "https://tarsuniverse.com",
+    image: tarsUniverse,
+    // github: "https://github.com/saied83/fashion-fizz",
+    featured: true,
+  },
   {
     title: "Fashion fizz",
     results: [
@@ -362,11 +381,13 @@ export const ProjectsSection = () => {
                           <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
-                      <a href={project.github} target="_blank">
-                        <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
-                          <Github className="size-8" />
-                        </button>
-                      </a>
+                      {project.github && (
+                        <a href={project.github} target="_blank">
+                          <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
+                            <Github className="size-8" />
+                          </button>
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="w-full">
