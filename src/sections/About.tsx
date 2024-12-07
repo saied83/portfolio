@@ -221,7 +221,7 @@ export const AboutSection = () => {
                 <div className="w-full mt-2 md:mt-4 ml-3">
                   <ul className="list-disc w-full text-left">
                     <li className="w-full">
-                      Build a Social Media Platform{" "}
+                      Developing a full-featured social media platform{" "}
                       <Link
                         target="_blank"
                         href="https://tarsuniverse.com"
@@ -229,19 +229,19 @@ export const AboutSection = () => {
                       >
                         Tars Universe
                       </Link>{" "}
-                      from scratch with TypeScript, Redux, React, TailwindCSS.
+                      with messaging and e-commerce features.
+                    </li>
+                    <li className="w-full">
+                      Implemented content creations, interactions, connections,
+                      infinite scroll, profile content catagory.
                     </li>
                     <li className="w-full">
                       Implement Real-time Chat Functionality using WebSockets
                       for instant communication.
                     </li>
                     <li className="w-full">
-                      Integrate User Authentication and Authorization with JWT
-                      tokens and OAuth.
-                    </li>
-                    <li className="w-full">
-                      Create Post and Comment features with rich text editing,
-                      image uploads, and likes/dislikes.
+                      Utilized React, Redux, TypeScript, ReactRouter,
+                      TailwindCSS, to deliver a seamless user experience.
                     </li>
                   </ul>
                 </div>
