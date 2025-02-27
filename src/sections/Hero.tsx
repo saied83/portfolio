@@ -150,7 +150,9 @@ export const HeroSection = () => {
           <div className="ml-auto mr-10">
             <TypeAnimation
               sequence={[
-                "Frontend Web Developer",
+                "JavaScript Engineer",
+                2000,
+                "Frontend Developer",
                 2000,
                 "Problem Solver",
                 2000,
