@@ -150,9 +150,9 @@ export const HeroSection = () => {
           <div className="ml-auto mr-10">
             <TypeAnimation
               sequence={[
-                "JavaScript Engineer",
+                "Frontend Engineer",
                 2000,
-                "Frontend Developer",
+                "JavaScript Developer",
                 2000,
                 "Problem Solver",
                 2000,
@@ -187,7 +187,7 @@ export const HeroSection = () => {
             <ArrowDown className="size-4" />
           </button>
           <a
-            href={"/resume_saied83.pdf"}
+            href={"/saied83_resume.pdf"}
             download={"resume_saiedur_rahman_saied.pdf"}
             className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-11 px-6 rounded-xl cursor-pointer z-[100]"
           >
