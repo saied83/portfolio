@@ -29,13 +29,11 @@ import webpack from "@/assets/icons/webpack.svg";
 import redux from "@/assets/icons/redux-store.svg";
 import Ts from "@/assets/icons//typescript-svgrepo-com.svg";
 import vite from "@/assets/icons/vite-svgrepo-com.svg";
-import swc from "@/assets/icons/swc.svg";
 import turborepo from "@/assets/icons/turborepo.svg";
 import pnpm from "@/assets/icons/pnpm.svg";
 import npm from "@/assets/icons/npm.svg";
 
 import netlify from "@/assets/icons/netlify.svg";
-import babel from "@/assets/icons/babel.svg";
 
 const toolBoxFrontEndItems = [
   {
@@ -98,10 +96,7 @@ const toolBoxBackEndItems = [
     title: "Vite",
     iconType: vite,
   },
-  {
-    title: "Babel",
-    iconType: babel,
-  },
+
   {
     title: "Turborepo",
     iconType: turborepo,
@@ -117,10 +112,6 @@ const toolBoxBackEndItems = [
   {
     title: "Git",
     iconType: Github,
-  },
-  {
-    title: "SWC",
-    iconType: swc,
   },
 ];
 
@@ -267,8 +258,11 @@ export const AboutSection = () => {
                       connections, infinite scrolling, and profile management.
                     </li>
                     <li className="w-full">
-                      Designed and optimized a seamless user experience with
-                      React, Redux, TypeScript, and TailwindCSS.
+                      Designed and optimized a seamless user experience with{" "}
+                      <span className="text-white">React</span>,{" "}
+                      <span className="text-white">Redux</span>,{" "}
+                      <span className="text-white">TypeScript</span>,{" "}
+                      <span className="text-white">TailwindCSS</span>.{" "}
                     </li>
                     <li className="w-full">
                       Built the entire{" "}

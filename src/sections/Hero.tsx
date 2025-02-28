@@ -187,7 +187,7 @@ export const HeroSection = () => {
             <ArrowDown className="size-4" />
           </button>
           <a
-            href={"/resume_saiedur_rahman_saied.pdf"}
+            href={"/resume_saied83.pdf"}
             download={"resume_saiedur_rahman_saied.pdf"}
             className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-11 px-6 rounded-xl cursor-pointer z-[100]"
           >
@@ -195,7 +195,7 @@ export const HeroSection = () => {
             <Image
               src={Download}
               alt="download icon"
-              className="size-6 mt-2 animate-bounce "
+              className="size-6 mt-1.5 animate-bounce "
             />
           </a>
         </div>
