@@ -297,10 +297,10 @@ export const ProjectsSection = () => {
 
   return (
     <section
-      className="py-16 pt-12 lg:py-24 lg:pt-20 flex justify-center "
+      className="py-16 pt-12  lg:py-24 lg:pt-20 flex justify-center "
       id="project"
     >
-      <div className="w-full sm:w-[85vw] lg:max-w-[1024px] ">
+      <div className="w-[90vw]  md:w-[85vw] lg:max-w-[1024px] ">
         <SectionHeader
           title="My Projects"
           eyebrow="Real-world Results"

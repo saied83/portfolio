@@ -16,20 +16,32 @@ import tailwind from "@/assets/icons/tailwindcss.svg";
 import BootStrap from "@/assets/icons/bootstrap-svgrepo-com.svg";
 
 import next from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
-import typejs from "@/assets/icons/typescript-svgrepo-com.svg";
+
 import node from "@/assets/icons/node-dot-js-svgrepo-com.svg";
-import mongo from "@/assets/icons/mongodb-svgrepo-com (2).svg";
-import mysql from "@/assets/icons/mysql-svgrepo-com.svg";
+
 import rrd from "@/assets/icons/react-router-svgrepo-com.svg";
-import express from "@/assets/icons/express-svgrepo-com.svg";
+
 import Reveal from "@/components/Reveal";
 import tars from "@/assets/images/tars.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import webpack from "@/assets/icons/webpack.svg";
 import redux from "@/assets/icons/redux-store.svg";
+import Ts from "@/assets/icons//typescript-svgrepo-com.svg";
+import vite from "@/assets/icons/vite-svgrepo-com.svg";
+import swc from "@/assets/icons/swc.svg";
+import turborepo from "@/assets/icons/turborepo.svg";
+import pnpm from "@/assets/icons/pnpm.svg";
+import npm from "@/assets/icons/npm.svg";
+
+import netlify from "@/assets/icons/netlify.svg";
+import babel from "@/assets/icons/babel.svg";
 
 const toolBoxFrontEndItems = [
+  {
+    title: "TypeScript",
+    iconType: Ts,
+  },
   {
     title: "JavaScript",
     iconType: Js,
@@ -46,10 +58,7 @@ const toolBoxFrontEndItems = [
     title: "Nextjs",
     iconType: next,
   },
-  {
-    title: "TypeScript",
-    iconType: typejs,
-  },
+
   {
     title: "Webpack",
     iconType: webpack,
@@ -82,20 +91,36 @@ const toolBoxBackEndItems = [
     iconType: node,
   },
   {
-    title: "Expressjs",
-    iconType: express,
+    title: "PNPM",
+    iconType: pnpm,
   },
   {
-    title: "MongoDB",
-    iconType: mongo,
+    title: "Vite",
+    iconType: vite,
   },
   {
-    title: "MySQL",
-    iconType: mysql,
+    title: "Babel",
+    iconType: babel,
   },
   {
-    title: "Github",
+    title: "Turborepo",
+    iconType: turborepo,
+  },
+  {
+    title: "NPM",
+    iconType: npm,
+  },
+  {
+    title: "Netlify",
+    iconType: netlify,
+  },
+  {
+    title: "Git",
     iconType: Github,
+  },
+  {
+    title: "SWC",
+    iconType: swc,
   },
 ];
 
@@ -106,23 +131,18 @@ const hobbies = [
     top: "5%",
     left: "5%",
   },
-  {
-    hobby: "Gardening",
-    emoji: "🪴",
-    left: "50%",
-    top: "5%",
-  },
+
   {
     hobby: "Volunteering",
     emoji: "🤝",
-    left: "10%",
+    left: "20%",
     top: "35%",
   },
   {
     hobby: "Learning",
     emoji: "🧠",
-    left: "35%",
-    top: "40%",
+    left: "60%",
+    top: "5%",
   },
   {
     hobby: "Exploring",
@@ -151,7 +171,7 @@ export const AboutSection = () => {
       className="py-16 pt-12 lg:py-24 lg:pt-20 flex justify-center"
       id="about"
     >
-      <div className=" w-[85vw] lg:max-w-[1024px] px-4 ">
+      <div className=" w-[90vw]  md:w-[85vw] lg:max-w-[1024px] ">
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
@@ -163,7 +183,9 @@ export const AboutSection = () => {
               <div>
                 <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
                   <StarIcon className="size-9 text-emerald-300" />
-                  <h3 className="font-serif text-3xl f">Who Am I?</h3>
+                  <h3 className="font-serif text-2xl md:text-3xl ">
+                    Who Am I?
+                  </h3>
                 </div>
                 <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
                   <p className="text-semibold  text-white">
@@ -174,15 +196,13 @@ export const AboutSection = () => {
                     TARS Universe Project, a cutting-edge social networking
                     platform built on a monorepo architecture.
                   </p>
-                  <p>
-                    As a self-learner, I&apos;ve honed my skills through
-                    official documentations, online tutorials, and hands-on
-                    projects. I was pursuing a BSc in Computer Science at BRAC
-                    University, where I maintained a 3.9 CGPA out of 4 before
-                    deciding to drop out and fully commit to my passion for web
-                    development. I&apos;ve successfully completed core courses
-                    with highest marks in Object-Oriented Programming, Data
-                    Structures and Algorithms, and Database Management.
+                  <p className="text-white">
+                    I was pursuing a BSc in Computer Science at BRAC University,
+                    where I maintained a 3.9 CGPA out of 4 before deciding to
+                    drop out and fully commit to my passion for web development.
+                    I&apos;ve successfully completed core courses with highest
+                    marks in Object-Oriented Programming, Data Structures and
+                    Algorithms, and Database Management.
                   </p>
                 </div>
               </div>
@@ -190,7 +210,7 @@ export const AboutSection = () => {
           </Reveal>
 
           <Reveal width="100%">
-            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden w-full">
+            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify  w-full px-2 pr-6">
               <div
                 className="absolute inset-0 opacity-5 -z-10"
                 style={{
@@ -198,9 +218,11 @@ export const AboutSection = () => {
                 }}
               ></div>
 
-              <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text ">
+              <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text pl-4">
                 <StarIcon className="size-9 text-emerald-300" />
-                <h3 className="font-serif text-3xl f">Experience</h3>
+                <h3 className="font-serif  text-2xl md:text-3xl ">
+                  Experience
+                </h3>
               </div>
               <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
                 <div className="flex md:flex-row flex-col justify-start items-center mt-2 gap-6">
@@ -318,47 +340,24 @@ export const AboutSection = () => {
               </div>
             </Card>
           </Reveal>
-          <Reveal>
-            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden outline-none">
-              <div>
-                <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
-                  <StarIcon className="size-9 text-emerald-300" />
-                  <h3 className="font-serif text-3xl f">What Inspires Me?</h3>
-                </div>
-                <div className=" text-justify lg:text-start lg:w-full flex flex-col gap-4 text-white/60 mt-4 md:text-lg  mx-auto lg:text-xl">
-                  <p className="text-semibold  text-white">
-                    {" "}
-                    I’m driven by innovation, problem-solving, and pushing the
-                    boundaries of frontend engineering. I love architecting
-                    scalable, high-performance applications, working with
-                    cutting-edge technologies, and delivering seamless user
-                    experiences. My goal is to continuously learn, improve, and
-                    create impactful digital products that enhance the way
-                    people interact online. Would you like to add any personal
-                    achievements or side projects to strengthen your profile
-                    further? 🚀
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </Reveal>
+
           <div className=" flex flex-col gap-6 md:grid md:grid-cols-2 ">
             <Card className=" h-[320px] p-0 w-full">
               <CardHeader
                 title="My ToolBox"
                 description="Explore the technologies and tools I use to craft exceptional
                 digital experiences."
-                className="px-6 pt-6"
+                className="px-6 pt-6 text-2xl md:text-3xl"
               />
               <ToolBoxItems
                 toolboxItems={toolBoxFrontEndItems}
                 className=""
-                itemsWrapperClassName="animate-move-left [animation-duration:300s]"
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
               />
               <ToolBoxItems
                 toolboxItems={toolBoxBackEndItems}
                 className="mt-6 "
-                itemsWrapperClassName="animate-move-right [animation-duration:300s]"
+                itemsWrapperClassName="animate-move-right [animation-duration:30s]"
               />
             </Card>
 
