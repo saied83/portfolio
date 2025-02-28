@@ -8,6 +8,7 @@ import React from "@/assets/icons/react.svg";
 import fashionFizz from "@/assets/images/fashion-fizz.png";
 import tarsAdmin from "@/assets/icons/admin.png";
 import ChatWebApp from "@/assets/images/chat-web-app.png";
+import BouncingBall from "@/assets/images/preview.png";
 import InstaFood from "@/assets/images/instafood.png";
 import Tailwind from "@/assets/icons/tailwindcss.svg";
 import BootStrap from "@/assets/icons/bootstrap-svgrepo-com.svg";
@@ -40,6 +41,14 @@ import { twMerge } from "tailwind-merge";
 import { off } from "process";
 import Redux from "@/assets/icons/redux-store.svg";
 import tarsUniverse from "@/assets/images/tarsuniverse.png";
+import vite from "@/assets/icons/vite-svgrepo-com.svg";
+import swc from "@/assets/icons/swc.svg";
+import turborepo from "@/assets/icons/turborepo.svg";
+import pnpm from "@/assets/icons/pnpm.svg";
+import npm from "@/assets/icons/npm.svg";
+
+import netlify from "@/assets/icons/netlify.svg";
+import babel from "@/assets/icons/babel.svg";
 
 const portfolioProjects = [
   {
@@ -52,8 +61,30 @@ const portfolioProjects = [
       { title: "Web Socket for messaging." },
       { title: "Implement Redux for state management." },
     ],
-    tech: ["react", "redux", "tailwind", "ts", "rrd", "js", "frontend"],
-    techIcon: [React, Redux, Tailwind, Rrd, Js, Css, Html],
+    tech: [
+      "react",
+      "redux",
+      "turbo",
+      "tailwind",
+      "ts",
+      "rrd",
+      "js",
+      "frontend",
+    ],
+    techIcon: [
+      turborepo,
+      pnpm,
+      React,
+      Redux,
+      Tailwind,
+      Rrd,
+      Ts,
+      babel,
+      swc,
+      vite,
+      Css,
+      Html,
+    ],
     link: "https://tarsuniverse.com",
     image: tarsUniverse,
     // github: "https://github.com/saied83/fashion-fizz",
@@ -74,7 +105,19 @@ const portfolioProjects = [
       { title: "Integrated monitoring system" },
     ],
     tech: ["react", "redux", "tailwind", "ts", "rrd", "js", "frontend"],
-    techIcon: [React, Redux, Tailwind, Ts, Rrd, Js, Css, Html],
+    techIcon: [
+      turborepo,
+      React,
+      Redux,
+      Tailwind,
+      Ts,
+      Rrd,
+      Js,
+      pnpm,
+      vite,
+      Css,
+      Html,
+    ],
     link: "https://admin.tarsuniverse.com",
     image: tarsAdmin,
     // github: "https://github.com/saied83/fashion-fizz",
@@ -146,6 +189,24 @@ const portfolioProjects = [
     link: "https://chat-web-app-guai.onrender.com/",
     image: ChatWebApp,
     github: "https://github.com/saied83/chat-web-app",
+    featured: true,
+  },
+  {
+    title: "Bouncing Ball",
+    results: [
+      {
+        title: "Ball slows down due to friction. Bounces off the screen edges.",
+      },
+
+      { title: "Stops when speed drops below a threshold." },
+      { title: "Click to restart the ball from the last stopped position." },
+    ],
+    tech: ["ts", "react", "tailwind", "svg", "vite"],
+    techIcon: [React, Tailwind, Js, Ts, , vite, BootStrap, Html, Css],
+
+    link: "https://ball-bouncing-saied83.netlify.app/",
+    image: BouncingBall,
+    github: "https://github.com/saied83/bouncing-ball83/chat-web-app",
     featured: true,
   },
   {
