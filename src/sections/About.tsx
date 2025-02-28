@@ -147,8 +147,11 @@ const hobbies = [
 export const AboutSection = () => {
   const constrainref = useRef(null);
   return (
-    <div className="py-16 pt-12 lg:py-24 lg:pt-20 " id="about">
-      <div className="container">
+    <div
+      className="py-16 pt-12 lg:py-24 lg:pt-20 flex justify-center"
+      id="about"
+    >
+      <div className=" w-[85vw] lg:max-w-[1024px] px-4 ">
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
@@ -156,7 +159,7 @@ export const AboutSection = () => {
         />
         <div className="mt-16 flex flex-col gap-6">
           <Reveal>
-            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden outline-none">
+            <Card className="px-2 sm:p-6 md:p-16 lg:p-12 lg:pr-10 lg:text-justify overflow-hidden ">
               <div>
                 <div className="inline-flex gap-2  items-center bg-gradient-to-r from-emerald-300 to-sky-400  font-bold  uppercase tracking-widest text-sm text-transparent bg-clip-text  ">
                   <StarIcon className="size-9 text-emerald-300" />

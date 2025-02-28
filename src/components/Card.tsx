@@ -16,7 +16,7 @@ const Card = ({
       {...other}
     >
       <div
-        className="absolute inset-0 -z-10 opacity-5"
+        className="absolute hidden sm:block inset-0 -z-10 opacity-5"
         style={{
           backgroundImage: `url(${grainImage.src})`,
         }}

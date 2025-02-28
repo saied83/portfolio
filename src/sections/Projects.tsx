@@ -6,6 +6,7 @@ import Css from "@/assets/icons/css3.svg";
 import Github from "@/assets/icons/github.svg";
 import React from "@/assets/icons/react.svg";
 import fashionFizz from "@/assets/images/fashion-fizz.png";
+import tarsAdmin from "@/assets/icons/admin.png";
 import ChatWebApp from "@/assets/images/chat-web-app.png";
 import InstaFood from "@/assets/images/instafood.png";
 import Tailwind from "@/assets/icons/tailwindcss.svg";
@@ -42,7 +43,7 @@ import tarsUniverse from "@/assets/images/tarsuniverse.png";
 
 const portfolioProjects = [
   {
-    title: "Tars Universe",
+    title: "Universe",
     results: [
       { title: "Create content, Explore & interact" },
       {
@@ -51,10 +52,31 @@ const portfolioProjects = [
       { title: "Web Socket for messaging." },
       { title: "Implement Redux for state management." },
     ],
-    tech: ["react", "redux", "tailwind", "rrd", "js", "frontend"],
+    tech: ["react", "redux", "tailwind", "ts", "rrd", "js", "frontend"],
     techIcon: [React, Redux, Tailwind, Rrd, Js, Css, Html],
     link: "https://tarsuniverse.com",
     image: tarsUniverse,
+    // github: "https://github.com/saied83/fashion-fizz",
+    featured: true,
+  },
+  {
+    title: "Admin",
+    results: [
+      {
+        title:
+          "Incredible dashboard to manage 2 types of users, 4 types of content, and products",
+      },
+      {
+        title:
+          "Real-time notifications, manage user connections, and activity tracking",
+      },
+
+      { title: "Integrated monitoring system" },
+    ],
+    tech: ["react", "redux", "tailwind", "ts", "rrd", "js", "frontend"],
+    techIcon: [React, Redux, Tailwind, Ts, Rrd, Js, Css, Html],
+    link: "https://admin.tarsuniverse.com",
+    image: tarsAdmin,
     // github: "https://github.com/saied83/fashion-fizz",
     featured: true,
   },
@@ -274,8 +296,11 @@ export const ProjectsSection = () => {
   }, [value]);
 
   return (
-    <section className="py-16 pt-12 lg:py-24 lg:pt-20" id="project">
-      <div className="container mx-auto">
+    <section
+      className="py-16 pt-12 lg:py-24 lg:pt-20 flex justify-center "
+      id="project"
+    >
+      <div className="w-full sm:w-[85vw] lg:max-w-[1024px] ">
         <SectionHeader
           title="My Projects"
           eyebrow="Real-world Results"
@@ -295,13 +320,19 @@ export const ProjectsSection = () => {
               onChange={(e) => setValue(e.target.value)}
               name=""
               id=""
-              className="text-black rounded-md px-2 md:px-[10px] py-1 text-sm"
+              className=" text-black bg-sky-50 focus:outline-none rounded-md px-2 md:px-[10px] py-1 text-sm"
             >
               <option
                 className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
                 value="react"
               >
                 Reactjs
+              </option>
+              <option
+                className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
+                value="ts"
+              >
+                TypeScript
               </option>
               <option
                 className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"
@@ -333,9 +364,9 @@ export const ProjectsSection = () => {
             return (
               <Card
                 key={project.title}
-                className="sticky lg:px-20 lg:pt-16 md:px-10 md:pt-12 pb-0 pt-8 px-8 "
+                className="sticky lg:px-20 lg:pt-16 md:px-10 md:pt-12 pb-0 pt-8 w-full px-4 h-auto md:h-[700px] lg:h-[450px] "
                 style={{
-                  top: `calc(${110 + index * 30}px)`,
+                  top: `calc(${110 + index * 5}px)`,
                 }}
               >
                 <div
@@ -344,31 +375,31 @@ export const ProjectsSection = () => {
                     backgroundImage: `url(${grainImage.src})`,
                   }}
                 ></div>
-                <div className="flex flex-col-reverse gap-10 lg:grid lg:grid-cols-2 lg:gap-16">
+                <div className="flex flex-col-reverse   gap-6 lg:grid lg:grid-cols-2 lg:gap-10">
                   <div className="lg:pb-16 pb-8">
                     <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold gap-2 uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                      <h3 className="font-serif text-2xl md:text-4xl md:mb-2  ">
+                      <h3 className="font-serif  text-lg sm:text-2xl md:mb-2  ">
                         {project.title}
                       </h3>
                     </div>
 
-                    <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                    <ul className="hidden md:flex flex-col gap-2 mt-4 md:mt-5">
+                    <hr className="border-t-2 border-white/5 mt-2" />
+                    <ul className="hidden md:flex flex-col gap-2 mt-3">
                       {project.results.map((result) => (
                         <li
                           key={result.title}
-                          className="flex gap-2 text-sm text-white/50 md:text-base "
+                          className="flex items-start justify-start gap-2 text-sm text-white/50 md:text-base w-full"
                         >
-                          <CheckIcon className="size-5 md:size-6" />
-                          <span>{result.title}</span>
+                          <CheckIcon className="w-[24px]" />
+                          <span className="flex-1">{result.title}</span>
                         </li>
                       ))}
                     </ul>
                     {/* Technology icons  */}
-                    <div className="flex flex-wrap gap-2  mt-8 sm:mt-4 text-md sm:text-base ">
+                    <div className="flex flex-wrap gap-2  text-md sm:text-base mt-3">
                       {project.techIcon.map((item, index) => (
                         <TechIcon
-                          className="size-6 md:size-8 md:mt-6"
+                          className="size-6 md:mt-6"
                           key={index}
                           component={item}
                         />
@@ -376,24 +407,24 @@ export const ProjectsSection = () => {
                     </div>
                     <div className="inline-flex mt-8 gap-8 items-center">
                       <a href={project.link} target="_blank">
-                        <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 md:w-auto px-8">
+                        <button className="bg-white text-gray-950 h-10 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 md:w-auto px-8">
                           <span>Live Site</span>
                           <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
                       {project.github && (
                         <a href={project.github} target="_blank">
-                          <button className="bg-white text-gray-950 size-12 flex items-center justify-center  rounded-lg ">
+                          <button className="bg-white text-gray-950 size-10 flex items-center justify-center  rounded-lg ">
                             <Github className="size-8" />
                           </button>
                         </a>
                       )}
                     </div>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full ">
                     <Image
-                      className="rounded-lg   -my-4 aspect-auto md:-mb-0 lg:mt-0
-                      lg:absolute lg:h-full md:w-auto lg:max-w-none"
+                      className="rounded-lg object-cover  object-top w-full lg:h-auto h-[200px]  md:h-[300px]   md:-mb-0 lg:mt-0
+                      lg:absolute  "
                       src={project.image}
                       alt={project.title}
                     />
