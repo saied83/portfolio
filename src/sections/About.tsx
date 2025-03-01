@@ -250,7 +250,7 @@ export const AboutSection = () => {
                       with messaging and e-commerce features.
                     </li>
                     <li className="w-full">
-                      Engineered real-time messaging using WebSockets for
+                      Real-time messaging using WebSockets for
                       instant communication.
                     </li>
                     <li className="w-full">
