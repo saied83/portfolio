@@ -242,7 +242,7 @@ export const AboutSection = () => {
                       Developing a full-featured social media platform{" "}
                       <Link
                         target="_blank"
-                        href="https://tarsuniverse.com"
+                        href="http://v1.tarsuniverse.com"
                         className="text-blue-300"
                       >
                         Tars Universe

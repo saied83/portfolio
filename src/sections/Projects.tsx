@@ -85,7 +85,7 @@ const portfolioProjects = [
       Css,
       Html,
     ],
-    link: "https://tarsuniverse.com",
+    link: "http://v1.tarsuniverse.com",
     image: tarsUniverse,
     // github: "https://github.com/saied83/fashion-fizz",
     featured: true,
