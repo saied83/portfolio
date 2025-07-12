@@ -91,7 +91,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-white/60 mt-4 text-justify flex flex-col gap-4 md:text-lg lg:text-xl">
                   <p className="text-white">
-                    I'm a self-taught Frontend Developer currently working
+                    I&apos;m a self-taught Frontend Developer currently working
                     full-time at TARS INDUSTRIES, where I lead the frontend
                     development of the TARS Universe Project — a large-scale
                     social networking platform built with a modular, monorepo
