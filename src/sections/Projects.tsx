@@ -381,7 +381,7 @@ export const ProjectsSection = () => {
               onChange={(e) => setValue(e.target.value)}
               name=""
               id=""
-              className=" text-black bg-sky-50 focus:outline-none rounded-md px-2 md:px-[10px] py-1 text-sm"
+              className=" text-white border border-white   bg-slate-900 focus:outline-none rounded-md px-2 md:px-[10px] py-1 text-sm"
             >
               <option
                 className="bg-white/10 backdrop-blur text-black py-0.5 px-2 rounded-sm border-b-2 border-gray-400"

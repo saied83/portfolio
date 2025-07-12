@@ -14,7 +14,7 @@ import Download from "@/assets/icons/download.png";
 
 export const HeroSection = () => {
   return (
-    <div className="pb-16 pt-16 md:pt-32 lg:pt-32  md:pb-48 lg:pb-52 relative z-0 overflow-x-clip">
+    <div className="pb-16 pt-20 md:pt-32 lg:pt-32  md:pb-48 lg:pb-52 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:liner-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -149,13 +149,7 @@ export const HeroSection = () => {
           </div>
           <div className="ml-auto mr-10">
             <TypeAnimation
-              sequence={[
-                "Frontend Developer",
-                2000,
-                
-                "Problem Solver",
-                2000,
-              ]}
+              sequence={["Frontend Engineer", 2000, "Problem Solver", 2000]}
               speed={50}
               repeat={Infinity}
               className="font-sans text-emerald-400 text-md md:text-lg italic "
@@ -163,17 +157,17 @@ export const HeroSection = () => {
           </div>
         </div>
         <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-xl md:text-2xl text-center mt-4 md:8 tracking-wide">
-            Building Exceptional User Experiences
+          <h1 className="font-serif text-xl md:text-2xl text-center mt-4 md:mt-8 tracking-wide">
+            Crafting Scalable, Performant Web Applications
           </h1>
 
-          <p className="mt-4 md:text-lg  text-center text-white/60">
-            Passionate and Self-driven Frontend Web Developer specializing in
-            turning design concepts into dynamic, user-friendly web
-            applications.{" "}
-            <span className="hidden md:block">
-              {" "}
-              Explore my projects and technical skills.
+          <p className="mt-4 md:text-lg text-center text-white/60">
+            Full-time Frontend Developer with hands-on experience building
+            large-scale, modular applications using React, TypeScript, and
+            modern frontend architecture.
+            <span className="hidden md:block mt-4">
+              Explore my work and how I build maintainable, real-time user
+              experiences.
             </span>
           </p>
         </div>
@@ -186,8 +180,8 @@ export const HeroSection = () => {
             <ArrowDown className="size-4" />
           </button>
           <a
-            href={"/resume_saiedur_rahman_saied.pdf"}
-            download={"resume_saiedur_rahman_saied.pdf"}
+            href={"/MD_SAIEDUR_RAHMAN_SAIED_RESUME.pdf"}
+            download={"MD_SAIEDUR_RAHMAN_SAIED_RESUME.pdf"}
             className="inline-flex items-center  border w-max  outline-none bg-white text-gray-900 h-11 px-6 rounded-xl cursor-pointer z-[100]"
           >
             <span className="font-semibold">Resume</span>
