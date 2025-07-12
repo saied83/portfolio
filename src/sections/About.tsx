@@ -83,7 +83,7 @@ export const AboutSection = () => {
         <div className="mt-16 flex flex-col gap-6">
           {/* Who Am I Section */}
           <Reveal>
-            <Card className="px-2 sm:p-6 md:p-16 lg:p-12 lg:pr-10 overflow-hidden">
+            <Card className="p-6 md:p-16 lg:p-12 lg:pr-10 overflow-hidden">
               <div>
                 <div className="inline-flex gap-2 items-center bg-gradient-to-r from-emerald-300 to-sky-400 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                   <StarIcon className="size-9 text-emerald-300" />
@@ -138,7 +138,7 @@ export const AboutSection = () => {
                   </div>
                 </div>
 
-                <div className="w-full mt-2 md:mt-4 ml-3">
+                <div className="w-full mt-2 md:mt-4 ">
                   <p className="text-white">
                     I began my journey as an intern and quickly progressed to a
                     full-time position. At TARS INDUSTRIES, I’ve led the entire
