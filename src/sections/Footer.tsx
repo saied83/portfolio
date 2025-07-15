@@ -26,7 +26,7 @@ export const Footer = () => {
       <div className="container">
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row items-center gap-8 md:justify-between">
           <div className="text-white/40 ">
-            &copy; 2024. All rights reserved.
+            &copy; {new Date().getFullYear()}. All rights reserved.
           </div>
           <nav className="flex flex-col md:flex-row items-center gap-8">
             {footerLinks.map((link) => (
